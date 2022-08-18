@@ -1,6 +1,6 @@
 # Certified Tech Developer
 
-# Repo da Turma 1 FullTime CTD DH Evolution 2034
+# Repo da Turma 1 FullTime CTD DH Evolution 2077
 
 ## 0822CDFEIIIWI01BRED0222FT
 
@@ -15,7 +15,7 @@ Terça, quarta e quinta das 10h30 às 12h30.
 
 ## [Aula 02 - Introdução à React.js](./02/)
 
-## Linguagens usadas
+## 💻 Linguagens usadas
 ============
 <div style="display: inline_block"><br>
 <img height="50" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"/>
@@ -31,9 +31,10 @@ Terça, quarta e quinta das 10h30 às 12h30.
 <img  width="150" src="https://img.shields.io/github/license/mashape/apistatus?color=gree&style=plastic" />
 
 ============
-# Tecnologias utilizadas
+# 📕Tecnologias utilizadas
+============
 
-## Front End
+Front End
 - HTML
 - CSS
 - Javascript
