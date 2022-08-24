@@ -1,0 +1,12 @@
+// Importei as cores do projeto
+@import 'cores';
+// Importei o componente btn (botão)
+@import 'btn';
+
+body {
+    background-color: $corFundo;
+}
+
+p {
+    color: $corTexto;
+}
