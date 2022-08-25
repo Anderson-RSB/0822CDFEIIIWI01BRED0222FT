@@ -1,0 +1,25 @@
+// custom-bootstrap.scss
+// Escolha os recursos que deseja utilizar no Bootstrap
+
+// 1. Inclua as funções primeiro (para então manipular, cores, SVGs, calculos, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Inclua sobrescreva as variáveis do Bootstrap aqui
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+
+
+// 8. Add additional custom code here

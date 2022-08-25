@@ -1,0 +1,26 @@
+.button {
+
+    padding: 25px;
+
+    &__primary {
+        color: $myproject_color_primary;
+
+        &--disabled {
+            color: rgba(0, 0, 255, 0.5);
+        }
+    }
+
+    &__secondary {
+        color: $myproject_color_secondary;
+    }
+
+    &__danger {
+        color: $myproject_color_danger;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+
+}

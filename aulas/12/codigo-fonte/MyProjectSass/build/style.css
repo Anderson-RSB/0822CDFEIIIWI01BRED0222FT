@@ -1,0 +1,57 @@
+/*
+
+    Extra
+    () Importar recursos do Bootstrap
+
+*/
+.button {
+  padding: 25px;
+}
+.button__primary {
+  color: blue;
+}
+.button__primary--disabled {
+  color: rgba(0, 0, 255, 0.5);
+}
+.button__secondary {
+  color: orange;
+}
+.button__danger {
+  color: red;
+}
+.button__danger:hover {
+  color: white;
+}
+
+.modal, .card {
+  border-radius: 25px;
+  border: 1px solid gray;
+}
+
+.card {
+  background-color: white;
+}
+
+.modal {
+  background-color: gray;
+}
+
+.card {
+  margin: 0 auto;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 25px;
+  bottom: 25px;
+}
+
+.modal {
+  margin: 0 auto;
+  position: absolute;
+  top: 25px;
+  left: 5px;
+  right: 10px;
+  bottom: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */

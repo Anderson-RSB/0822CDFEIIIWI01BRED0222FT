@@ -1,0 +1,11 @@
+@mixin center {
+    margin: 0 auto;
+}
+
+@mixin position($top, $left, $right, $bottom) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+}

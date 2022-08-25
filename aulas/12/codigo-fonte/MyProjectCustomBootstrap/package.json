@@ -1,0 +1,19 @@
+{
+  "name": "myprojectcustombootstrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass --watch src/custom-bootstrap.scss:build/style.css",
+    "build": "sass src/custom-bootstrap.scss:build/style.css --compress"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.54.5"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.0"
+  }
+}

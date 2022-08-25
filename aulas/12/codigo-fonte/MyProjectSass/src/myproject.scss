@@ -1,0 +1,37 @@
+/*
+
+    Extra
+    () Importar recursos do Bootstrap
+
+*/
+
+// (x) Variáveis
+@import './variaveis';
+// (x) Sintaxe
+@import './sintaxe';
+// (x) Herança
+@import './heranca';
+
+.card {
+    background-color: white;
+    // Herança
+    @extend %bordaArredondada;
+}
+
+.modal {
+    background-color: gray;
+    @extend %bordaArredondada;
+}
+
+// (x) Mixins
+@import './mixins';
+
+.card {
+    @include center;
+    @include position(10px, 10px, 25px, 25px);
+}
+
+.modal {
+    @include center;
+    @include position(25px, 5px, 10px, 5px);
+}
