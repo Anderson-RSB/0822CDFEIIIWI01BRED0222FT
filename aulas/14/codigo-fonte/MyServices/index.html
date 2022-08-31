@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Servides</title>
+</head>
+<body>
+
+    <script>
+
+        // https://jsonplaceholder.typicode.com/
+
+        // Realiza a requisição com base no endpoint...
+        // Obs.: catch e finally são opcionais nessa abordagem...
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(function(respostaDoServidor) {
+                console.log('primeira resposta do servidor', respostaDoServidor);
+                // O que o servidor responde primeiro?
+                console.log('status', respostaDoServidor.status);
+                console.log('ok', respostaDoServidor.ok);
+                console.log('redirect', respostaDoServidor.redirected);
+                // Converter a resposta em um json();
+                return respostaDoServidor.json();
+            })
+            .catch(function(error) {
+                console.log('Error', error);
+            }) 
+            .then(function(respostaFinalDoServidor) {
+                console.log('ultima resposta do servidor', respostaFinalDoServidor)
+                // Utilizando os recursos do javascript para apresentar em tela.
+                itemThen.innerText = respostaFinalDoServidor.title;
+            })
+            .catch(function(error) {
+                console.log('Error', error);
+            })
+            .finally(function () {
+                console.log('será executado mesmo que exista um erro')
+            });
+
+        // É assíncrona, ou seja, terá recursos para aguardar as promessas
+        async function requererPorId() {
+            // Obs.: try, catch e finally são opcionais nessa abordagem...
+            try {
+                // Realizo a requisição e aguardo (await) a resposta.
+                const respostaDoServidor = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+                // Realizo a conversão e aguardo (await) a resposta.
+                const respostaFinalDoServidor = await respostaDoServidor.json();
+                // Utilizando os recursos do javascript para apresentar em tela.
+                itemAsyncAwait.innerText = respostaFinalDoServidor.title ?? 'Não há itens';
+            }
+            catch(error) {
+                console.log('Error', error);
+            }
+        }
+
+        // Executei a função assincrona...
+        requererPorId();
+        
+
+        
+    </script>
+
+    <article>
+        <h1>Comunicação com servidor</h1>
+        <section>
+            <h2>GET - Requerer por Id</h2>
+            <h3>then()</h3>
+            <p id="itemThen"></p>
+            <h3>async await</h3>
+            <p id="itemAsyncAwait"></p>
+        </section>
+        <section>
+            <h2>GET - Requerer todos</h2>
+            <ul id="itens"></ul>
+        </section>
+    </article>
+    
+</body>
+</html>
