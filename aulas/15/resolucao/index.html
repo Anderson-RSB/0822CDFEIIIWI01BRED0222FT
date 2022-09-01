@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolução mesa de trabalho</title>
+</head>
+<body>
+
+    
+    <ul id="elementoInformacao"></ul>
+
+    <ul id="elementoPersonagens">
+
+    </ul>
+    
+    <script>
+        // https://rickandmortyapi.com/api/character
+        fetch('https://rickandmortyapi.com/api/character')
+            .then((respostaDoServidor) => respostaDoServidor.json())
+            .then((respostaEmJson) => {
+                apresentarInfo(respostaEmJson);
+                apresentarResultado(respostaEmJson);
+            });
+
+        function apresentarInfo(resposta) {
+            console.log(resposta.info)
+            const {count, pages, next, prev } = resposta.info;
+            elementoInformacao.innerHTML = `
+                <li>Total de personagens: ${count}</li>
+                <li>Total de páginas: ${pages}</li>
+                <li>Endpoint da próxima página: ${next}</li>
+                <li>Endpoint da página anterior: ${prev}</li>
+            `;
+        }
+
+        function apresentarResultado(resposta) {
+            console.log(resposta.results)
+            const {results} = resposta;
+            results.map(personagem => {
+                elementoPersonagens.innerHTML += `
+                    <li>
+                        <div>
+                            <img src="${personagem.image}" />
+                        </div>
+                        <div>${personagem.id} - ${personagem.name}, ${personagem.gender}</div>
+                    </li>
+                `
+            })
+            
+        }
+
+        // https://rickandmortyapi.com/api/episode
+    </script>
+</body>
+</html>
