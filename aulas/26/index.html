@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 26 - Revisão: Comunicação com Servidor</title>
+</head>
+<body>
+    
+
+    <script>
+        // HTTP 
+        // GET, POST, DELETE, PUT, PATCH...
+
+        // 1) Realiza requisições utilizando HTTP
+        // 1.1) GET, POST, DELETE, PUT, PATCH... 
+        // 1.2) Endpoint
+        let endpoint = 'https://viacep.com.br/ws/01001000/json/'
+        let requisicao = fetch(endpoint)
+        console.log('Primeira requisiçõa', requisicao);
+        // 2) Aguarda a promessa ser cumprida
+        requisicao.then(resposta => {
+            console.log("Resultado da primeira requisição", resposta);
+
+            return resposta.json();
+        })
+        // 3) Aguarda a promessa de conversão para JSON ser cumprida
+        .then(respostaEmJSON => console.log('Resultado da segunda requisição', respostaEmJSON))
+
+        console.log('outra instrução');
+
+
+        //
+
+        async function comunicacaoServidor() {
+            // 1) Realiza requisições utilizando HTTP
+            // 1.1) GET, POST, DELETE, PUT, PATCH... 
+            // 1.2) Endpoint
+            let endpoint = 'https://viacep.com.br/ws/01001000/json/';
+            let requisicao = await fetch(endpoint); // Espera essa promessa ser cumprida // then()
+            console.log("async/await: Resultado da primeira requisição", requisicao);
+            const respostaEmJSON = await requisicao.json(); // Espera essa promessa converter os dados em json
+            console.log('async/await: Resultado da segunda requisição', respostaEmJSON);
+        }
+
+        comunicacaoServidor();
+    </script>
+</body>
+</html>

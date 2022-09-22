@@ -47,7 +47,6 @@ export default function App() {
 		
 		*/
 
-
 		fetch('http://localhost:3000/posts')
 			.then((response) => response.json())
 			.then((json) => definirArtigos(json));
@@ -56,7 +55,9 @@ export default function App() {
 			.then((response) => response.json())
 			.then((json) => definirComentarios(json));
 
-
+		fetch('http://localhost:3000/profile')
+			.then((response) => response.json())
+			.then((json) => definirPerfil(json));
 
 	}, []);
 
@@ -75,6 +76,11 @@ export default function App() {
 			<div>
 				<h1>Comentários</h1>
 				{comentarios.map((comentario) => <div key={comentario.id}>{comentario.body}</div>)}
+			</div>
+
+			<div>
+				<h1>Perfil</h1>
+				<div>{perfil.name}</div>
 			</div>
 		</>
 
