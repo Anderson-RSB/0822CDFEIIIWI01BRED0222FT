@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Carrinho</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col">
+
+                <h1>Meu Carrinho</h1>
+                
+                <ul class="list-group"></ul>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+    <script>
+        // Capturo os valores que estão no localStorage
+        // Converto os valores em json
+        const meuCarrinho = JSON.parse(localStorage.getItem('carrinho'));
+        // Seleciono o elemento responsável pela lista que vou utilizar
+        // para apresentar os produtos em tela
+        const lista = document.querySelector('.list-group');
+
+        // Condiciono se o carrinho estiver vazio...
+        // Apresento na tela que o carrinho esta vazio
+        if(localStorage.getItem('carrinho') == null) {
+            lista.innerHTML = `
+                <p>Carrinho vazio</p>
+            `
+        }
+        // Caso contrário...
+        // apresento a lista em tela.
+        else {
+            meuCarrinho.map(produto => {
+                lista.innerHTML += `
+                    <li class="list-group-item">${produto.nome}<br>R$ ${produto.preço}</li>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>

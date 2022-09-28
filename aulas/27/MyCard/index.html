@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus produtos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col">
+                <h1>Lista de produtos</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="card my-2">
+                    <div class="card-body">
+                      <h2 class="card-title">Coca-cola</h2>
+                      <h3 class="card-subtitle mb-2 text-muted">R$ 5,50</h3>
+                      <div class="d-grid gap-2">
+                        <button 
+                            class="btn btn-primary" 
+                            type="button"
+                            onclick="adicionarItemNoCarrinho({
+                                id: 1,
+                                nome: 'Coca-cola',
+                                preço: 5.50
+                            })"
+                        >
+                            Adicionar carrinho
+                        </button>
+                      </div>                      
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="card my-2">
+                    <div class="card-body">
+                      <h2 class="card-title">Coxinha</h2>
+                      <h3 class="card-subtitle mb-2 text-muted">R$ 10</h3>
+                      <div class="d-grid gap-2">
+                        <button 
+                            class="btn btn-primary" 
+                            type="button"
+                            onclick="adicionarItemNoCarrinho({
+                                id: 2,
+                                nome: 'Coxinha',
+                                preço: 10.00
+                            })"
+                        >
+                            Adicionar carrinho
+                        </button>
+                      </div>                      
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script>
+        // Defino uma variável que irá armazenar a lista de  produtos
+        const carrinho = [];
+
+        function adicionarItemNoCarrinho(produto) {
+            console.log('Adicionei', produto.nome);
+            // Adiciono o objeto do produto na array responsável pela lista de produtos
+            carrinho.push(produto);
+            // Armazeno a lista atualizada no localStorage
+            localStorage.setItem("carrinho", JSON.stringify(carrinho));
+        }
+    </script>
+</body>
+</html>
